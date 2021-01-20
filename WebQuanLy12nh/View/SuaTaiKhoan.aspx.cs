@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebLamDep.Model;
+using WebQuanLy12nh.Model;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
-namespace WebLamDep.View
+namespace WebQuanLy12nh.View
 {
     public partial class SuaTaiKhoan : System.Web.UI.Page
     {
@@ -73,6 +73,7 @@ namespace WebLamDep.View
                     sqlCommand.Parameters.AddWithValue("@ten", txtTen.Text);
                     sqlCommand.Parameters.AddWithValue("@dt", sdtGV.Text);
                     sqlCommand.Parameters.AddWithValue("@mail", emailGV.Text);
+                    sqlCommand.Parameters.AddWithValue("@chuyenKhoa", "1");
                     if (nam.Checked == true)
                     {
                         sqlCommand.Parameters.AddWithValue("@gt", "1");
@@ -84,11 +85,11 @@ namespace WebLamDep.View
 
                     if (member.Checked == true)
                     {
-                        sqlCommand.Parameters.AddWithValue("@maquyen", "1");
+                        sqlCommand.Parameters.AddWithValue("@maquyen", "2");
                     }
                     else
                     {
-                        sqlCommand.Parameters.AddWithValue("@maquyen", "2");
+                        sqlCommand.Parameters.AddWithValue("@maquyen", "3");
                     }
 
                     int i = sqlCommand.ExecuteNonQuery();

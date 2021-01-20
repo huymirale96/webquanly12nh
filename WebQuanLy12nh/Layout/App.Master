@@ -41,7 +41,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">BEAUTYFUL</a>
+            <a class="navbar-brand" href="#">Bệnh Viện Minh Trí</a>
         </div>
 
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -53,7 +53,7 @@
 
         <!-- Top Navigation: Left Menu -->
         <ul class="nav navbar-nav navbar-left navbar-top-links">
-            <li><a href="trangchu.aspx"><i class="fa fa-home fa-fw"></i> Website</a></li>
+            <li><a href="#"><i class="fa fa-home fa-fw"></i></a></li>
         </ul>
 
         <!-- Top Navigation: Right Menu -->
@@ -93,12 +93,7 @@
                      <li>
                                 <a href="#"><i class="fa fa-archive fa-fw"></i> Quản Lý Bài Đăng<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
-                                      <% if ((int)Session["quyen"] == 2)
-                                          { %>
-                                    <li>
-                                        <a href="danhsachbaidang.aspx">Danh sách Tất Cả Bài Đăng</a> 
-                                    </li>
-                                      <% } %>
+                                     
                                     <li>
                                         <a href="DanhSachBaiDangCuaNguoiDung.aspx">Danh sách Bài Đã Đăng Của Bạn</a> 
                                     </li>
@@ -110,14 +105,14 @@
                             </li>
 
                            
-                                      <% if ((int)Session["quyen"] == 2)
+                                      <% if( Int32.Parse(Session["quyen"].ToString()) == 3)
                                           { %>
 
                             <li>
-                                <a href="#"><i class="fa fa-outdent fa-fw"></i> Quản Lý Loại Bài<span class="fa arrow"></span></a>
+                                <a href="#"><i class="fa fa-outdent fa-fw"></i> Quản Lý Dịch Vụ Y Tế<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="quanlyloaibai.aspx">Danh Sách Loại Bài</a>
+                                        <a href="QuanLyDichVuYTe.aspx">Danh Sách Dịch Vụ Y Tế</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->
@@ -164,16 +159,47 @@
 </div>
 
 <!-- jQuery -->
-<script src="../Scripts/jquery.min.js"></script>
+<script src="../Content/Scripts/jquery.min.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="../Scripts/bootstrap.min.js"></script>
+<script src="../Content/Scripts/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="../Scripts/metisMenu.min.js"></script>
+<script src="../Content/Scripts/metisMenu.min.js"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="../Scripts/startmin.js"></script>
+<script src="../Content/Scripts/startmin.js"></script>
+
+<script type="text/javascript">
+     $(document).ready(function(){
+        $('input[name="ctl00$MainContent$quyen"]').change(function(){
+        if($('#MainContent_bacSi').prop('checked')){
+             $(".dsChuyenKhoa").css("display", "block");
+        }else{
+             $(".dsChuyenKhoa").css("display", "none");
+        }
+              });
+    });
+
+
+    function validateNumber(evt) {
+  var theEvent = evt || window.event;
+
+  // Handle paste
+  if (theEvent.type === 'paste') {
+      key = event.clipboardData.getData('text/plain');
+  } else {
+  // Handle key press
+      var key = theEvent.keyCode || theEvent.which;
+      key = String.fromCharCode(key);
+  }
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+</script>
 
   
 </body>

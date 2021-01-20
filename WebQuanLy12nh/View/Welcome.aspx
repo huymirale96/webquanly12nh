@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/App.Master" AutoEventWireup="true" CodeBehind="Welcome.aspx.cs" Inherits="WebLamDep.View.Welcome" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Layout/App.Master"  AutoEventWireup="true" CodeBehind="Welcome.aspx.cs" Inherits="WebQuanLy12nh.View.Welcome" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="wrapper wrapper-content animated fadeInRight">
@@ -8,7 +9,7 @@
                         <br/>
                         <i class="fa fa-newspaper-o fa-5x text-white" style="margin-top: 10px; font-size: 7em;"></i>
                         <div class="text-white-op push-15-t welcome-text">
-                            Phần mềm quản lý WEBSITE CHIA SẺ KIẾN THỨC SẮC ĐẸP
+                            BỆNH VIỆN ĐA KHOA MINH TRÍ
                         </div>
                     </div>
                 </div>

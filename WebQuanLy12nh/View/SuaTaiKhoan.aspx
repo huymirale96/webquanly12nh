@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Layout/App.Master"  AutoEventWireup="true" CodeBehind="SuaTaiKhoan.aspx.cs" Inherits="WebLamDep.View.SuaTaiKhoan" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Layout/App.Master"  AutoEventWireup="true" CodeBehind="SuaTaiKhoan.aspx.cs" Inherits="WebQuanLy12nh.View.SuaTaiKhoan" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container-fluid">

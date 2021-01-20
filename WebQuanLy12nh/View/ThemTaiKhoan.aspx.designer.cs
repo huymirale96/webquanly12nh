@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebLamDep.View {
+namespace WebQuanLy12nh.View {
     
     
     public partial class ThemTaiKhoan {
@@ -58,22 +58,22 @@ namespace WebLamDep.View {
         protected global::System.Web.UI.WebControls.RadioButton nu;
         
         /// <summary>
-        /// sdtGV control.
+        /// sdt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox sdtGV;
+        protected global::System.Web.UI.WebControls.TextBox sdt;
         
         /// <summary>
-        /// emailGV control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox emailGV;
+        protected global::System.Web.UI.WebControls.TextBox email;
         
         /// <summary>
         /// txtTenDangNhap control.
@@ -110,6 +110,24 @@ namespace WebLamDep.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButton member;
+        
+        /// <summary>
+        /// bacSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton bacSi;
+        
+        /// <summary>
+        /// chuyenKhoa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList chuyenKhoa;
         
         /// <summary>
         /// btnSave control.

@@ -6,10 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
-using WebLamDep.Model;
+using WebQuanLy12nh.Model;
 using System.Security.Cryptography;
+using System.Diagnostics;
 
-namespace WebLamDep.View
+namespace WebQuanLy12nh.View
 {
     public partial class doiMatKhau : System.Web.UI.Page
     {
@@ -33,11 +34,15 @@ namespace WebLamDep.View
                 SqlCommand cmd1 = new SqlCommand("checkAcccount", sqlConnection);
                 cmd1.CommandType = CommandType.StoredProcedure;
                 cmd1.Parameters.AddWithValue("@TaiKhoan", Session["tenTK"].ToString());
-                cmd1.Parameters.AddWithValue("@matkhau", _txtMatKhauCu);
-                // int i1 = cmd1.ExecuteNonQuery();
+                cmd1.Parameters.AddWithValue("@matkhau", GetMD5(_txtMatKhauCu));
+              
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd1);
                 DataTable dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
+
+
+                Debug.WriteLine("tk mk  " + Session["tenTK"].ToString() + _txtMatKhauCu);
+
                 if (dataTable.Rows.Count > 0)
                 {
 

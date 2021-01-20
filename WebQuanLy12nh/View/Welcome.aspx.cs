@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebLamDep.View
+namespace WebQuanLy12nh.View
 {
     public partial class Welcome : System.Web.UI.Page
     {
@@ -15,7 +15,7 @@ namespace WebLamDep.View
             {
                 if(String.Compare(Request.QueryString["cn"].ToString(),"dangxuat") == 0)
                 {
-                    Session["quyen"] = "0";
+                    Session["quyen"] = "4";
                     Response.Redirect("Login.aspx");
                 }
             }

@@ -17,7 +17,16 @@ namespace WebQuanLy12nh
 
         protected void Session_Start(object sender, EventArgs e)
         {
-
+            
+            Session["login"] = false;
+            Session["tenTK"] = "HUY";
+            Session["maNguoiDung"] = "1";
+            Session["maGV"] = "";
+            Session["quyen"] = "4"; //1 bs  - 3 admin
+            Session["type"] = "1";
+            Session["mess"] = "1";
+            Session["sessId"] = Session.SessionID;
+            Session.Timeout = 100;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

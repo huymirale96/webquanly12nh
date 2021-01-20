@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/App.Master" AutoEventWireup="true" CodeBehind="doiMatKhau.aspx.cs" Inherits="WebLamDep.View.doiMatKhau" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/App.Master" AutoEventWireup="true" CodeFile="doiMatKhau.aspx.cs" Inherits="WebQuanLy12nh.View.doiMatKhau" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="wrapper wrapper-content animated fadeInRight">

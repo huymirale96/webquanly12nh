@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using WebLamDep.Model;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using WebQuanLy12nh.Model;
 
-namespace WebLamDep.View
+namespace WebQuanLy12nh.View
 {
     public partial class ThemTaiKhoan : System.Web.UI.Page
     {
@@ -18,6 +13,10 @@ namespace WebLamDep.View
         {
             nam.Checked = true;
             admin.Checked = true;
+            if (!IsPostBack)
+            {
+                loadListChuyenKhoa();
+            }
         }
 
         ConnectDatabase conn = new ConnectDatabase();
@@ -33,9 +32,18 @@ namespace WebLamDep.View
                     sqlCommand.Parameters.AddWithValue("@user", txtTenDangNhap.Text );
                     sqlCommand.Parameters.AddWithValue("@pass", GetMD5(txtMK.Text));
                     sqlCommand.Parameters.AddWithValue("@ten", txtTen.Text);
-                    sqlCommand.Parameters.AddWithValue("@dt", sdtGV.Text);
-                    sqlCommand.Parameters.AddWithValue("@mail",emailGV.Text);
-                   if(nam.Checked == true)
+                    sqlCommand.Parameters.AddWithValue("@dt", sdt.Text);
+                    sqlCommand.Parameters.AddWithValue("@mail", email.Text);
+                    if (bacSi.Checked == true)
+                    {
+                        sqlCommand.Parameters.AddWithValue("@chuyenKhoa", chuyenKhoa.SelectedValue);
+                    }
+                    else
+                    {
+                        sqlCommand.Parameters.AddWithValue("@chuyenKhoa", "1");
+                    }
+                    
+                   if (nam.Checked == true)
                     {
                         sqlCommand.Parameters.AddWithValue("@gt", "1");
                     }
@@ -46,15 +54,24 @@ namespace WebLamDep.View
 
                     if (member.Checked == true)
                     {
-                        sqlCommand.Parameters.AddWithValue("@maquyen", "1");
+                        sqlCommand.Parameters.AddWithValue("@maquyen", "2");
                     }
                     else
                     {
-                        sqlCommand.Parameters.AddWithValue("@maquyen", "2");
+
+                        if (admin.Checked == true)
+                        {
+                            sqlCommand.Parameters.AddWithValue("@maquyen", "3");
+                        }
+                        else
+                        {
+                            sqlCommand.Parameters.AddWithValue("@maquyen", "1");
+                        }
                     }
 
                     int i = sqlCommand.ExecuteNonQuery();
-                   if(i > 0)
+                    Debug.WriteLine("ChuyenKhoa:  " + chuyenKhoa.SelectedValue);
+                    if (i > 0)
                     {
                         lblDaDuyet.Text = "Tạo Tài Khoản Thành Công";
                    //     lblDaDuyet.CssClass = "text-success";
@@ -64,6 +81,21 @@ namespace WebLamDep.View
             catch (Exception exx)
             {
                 Debug.WriteLine("nhan dc loi  " + exx.Message);
+            }
+        }
+
+        public void loadListChuyenKhoa()
+        {
+            using (SqlConnection sqlConnection = conn.connectDatabase())
+            {
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("sp_layDSChuyenKhoa", sqlConnection);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                chuyenKhoa.DataSource = dataTable;
+                chuyenKhoa.DataValueField = "imachuyenkhoa";
+                chuyenKhoa.DataTextField = "stenchuyenkhoa";
+                chuyenKhoa.DataBind();
             }
         }
 

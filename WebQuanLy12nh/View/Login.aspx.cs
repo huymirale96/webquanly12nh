@@ -1,4 +1,4 @@
-﻿using WebLamDep.Model;
+﻿using WebQuanLy12nh.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +17,7 @@ namespace WebLamDep.View
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["login"] = false;
-            if (String.Compare(Session["quyen"].ToString(), "0") != 0)
+            if (String.Compare(Session["quyen"].ToString(), "0") == 0)
             {
                 Response.Redirect("welcome.aspx");
             }
@@ -46,9 +46,9 @@ namespace WebLamDep.View
                             Session["login"] = true;
                             Session["tenTK"] = rd["shoten"];
                             Session["maNguoiDung"] = rd["iMaNguoiDung"];
-                           // Session["maGV"] = rd["MaGV"];
+                     
                             Session["quyen"] = rd["iMaQuyen"];
-                            Debug.WriteLine("Quyen: " + rd["iMaQuyen"]);
+                            Debug.WriteLine("Quyen: " + rd["iMaQuyen"] + " tk: " +  rd["shoten"]);
                             Response.Redirect("Welcome.aspx");
                            
                         }

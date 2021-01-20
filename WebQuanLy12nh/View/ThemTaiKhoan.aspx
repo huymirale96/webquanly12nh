@@ -1,10 +1,27 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Layout/App.Master"  AutoEventWireup="true" CodeBehind="ThemTaiKhoan.aspx.cs" Inherits="WebLamDep.View.ThemTaiKhoan" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Layout/App.Master"  AutoEventWireup="true" CodeBehind="ThemTaiKhoan.aspx.cs" Inherits="WebQuanLy12nh.View.ThemTaiKhoan" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <style>
+        .dropListCK {
+            width: 356px;
+            margin-left: 25px;
+        }
+        .rdBTN {
+            margin-left: 20px;
+        }
+
+        .dsChuyenKhoa {
+            display: none;
+        }
+
+      
+
+    </style>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="page-header">THÊM TÀI KHOẢN</h1>
+                <h1 class="page-header">THÊM TÀI KHOẢN QUẢN TRỊ</h1>
             </div>
         </div>
         <div class="row">
@@ -42,13 +59,13 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label-left">Số điện thoại</label>
                                         <div class="col-md-9">
-                                            <asp:TextBox ID="sdtGV" MaxLength="10" runat="server" CssClass="form-control" />
+                                            <asp:TextBox ID="sdt" MaxLength="10" runat="server" CssClass="form-control" />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label-left">Email</label>
                                         <div class="col-md-9">
-                                            <asp:TextBox ID="emailGV" TextMode="Email" runat="server" CssClass="form-control" />
+                                            <asp:TextBox ID="email" TextMode="Email" runat="server" CssClass="form-control" />
                                         </div>
                                     </div>
 
@@ -68,8 +85,13 @@
 
                                     <div class="form-group">
                                         <label class="col-md-3 control-label-left">Quyền</label>
-                                        <asp:RadioButton runat="server" ID="admin"  GroupName="quyen" Text="ADMIN"/>
-                                        <asp:RadioButton runat="server" ID="member" GroupName="quyen" TEXT="MEMBER"/>
+                                        <asp:RadioButton runat="server" ID="admin"  GroupName="quyen" class="rdBTN" Text="ADMIN"/>
+                                        <asp:RadioButton runat="server" ID="member" GroupName="quyen" class="rdBTN"  TEXT="MEMBER"/>
+                                        <asp:RadioButton runat="server" ID="bacSi" GroupName="quyen" class="rdBTN"  TEXT="Bác Sĩ"/>
+                                    </div>
+                                     <div class="form-group dsChuyenKhoa">
+                                        <label class="col-md-3 control-label-left">Chuyên Khoa</label>
+                                        <asp:DropDownList ID="chuyenKhoa" runat="server"  CssClass="form-control dropListCK"></asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebLamDep.View {
+namespace WebQuanLy12nh.View {
     
     
     public partial class SuaTaiKhoan {
