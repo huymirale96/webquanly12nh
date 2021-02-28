@@ -17,16 +17,18 @@ namespace WebQuanLy12nh.View
         {
             if (!IsPostBack)
             {
-                if(Request.QueryString["ten"] != null && Request.QueryString["id"] != null)
+                if(Request.QueryString["ten"] != null && Request.QueryString["id"] != null && Request.QueryString["tienPhi"] != null && Request.QueryString["cn"] != null)
                 {
+                    Debug.WriteLine("nhan dc " + Request.QueryString["ten"] + Request.QueryString["tienPhi"]);
                     using (SqlConnection sqlConnection = conn.connectDatabase())
                     {
-                        SqlCommand sqlCommand = new SqlCommand("sp_capNhatTenLoaiBai", sqlConnection);
+                        SqlCommand sqlCommand = new SqlCommand("sp_capNhatDichVu", sqlConnection);
                         sqlCommand.CommandType = CommandType.StoredProcedure;
                         sqlCommand.Parameters.AddWithValue("@ten", Request.QueryString["ten"].ToString());
                         sqlCommand.Parameters.AddWithValue("@id", Request.QueryString["id"].ToString());
+                        sqlCommand.Parameters.AddWithValue("@tien", Request.QueryString["tienPhi"].ToString());
                         sqlCommand.ExecuteNonQuery();
-                      //  layDanhSachLoaiBai();
+                        //  layDanhSachLoaiBai();
                     }
                 }
                 layDanhSachDichVu();

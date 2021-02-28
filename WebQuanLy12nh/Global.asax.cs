@@ -20,7 +20,7 @@ namespace WebQuanLy12nh
             
             Session["login"] = false;
             Session["tenTK"] = "HUY";
-            Session["maNguoiDung"] = "1";
+            Session["maNguoiDung"] = "2";
             Session["maGV"] = "";
             Session["quyen"] = "4"; //1 bs  - 3 admin
             Session["type"] = "1";

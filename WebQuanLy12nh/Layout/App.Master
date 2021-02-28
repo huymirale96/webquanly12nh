@@ -21,9 +21,12 @@
 
     <!-- Custom CSS -->
     <link href="../Content/startmin.css" rel="stylesheet">
-    <script src="../Content/ckeditor/ckeditor.js"></script>
+  
     <!-- Morris Charts CSS -->
     <link href="../Content/morris.css" rel="stylesheet">
+
+    
+    <script src="../Content/Scripts/CTJavaScript.js"></script>
 
     <!-- Custom Fonts -->
     <link href="../Content/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -91,14 +94,14 @@
                         <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
                      <li>
-                                <a href="#"><i class="fa fa-archive fa-fw"></i> Quản Lý Bài Đăng<span class="fa arrow"></span></a>
+                                <a href="#"><i class="fa fa-archive fa-fw"></i> Quản Lý Lịch Khám<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                      
                                     <li>
-                                        <a href="DanhSachBaiDangCuaNguoiDung.aspx">Danh sách Bài Đã Đăng Của Bạn</a> 
+                                        <a href="DanhSachLichKham.aspx">Danh Sách Lịch Khám</a> 
                                     </li>
                                     <li>
-                                        <a href="thembaiviet.aspx">Thêm Bài Đăng</a>
+                                        <a href="datlichkham.aspx">Thêm lịch Khám</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->

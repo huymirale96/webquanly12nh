@@ -9,6 +9,7 @@ namespace WebQuanLy12nh.View
 {
     public partial class ThemTaiKhoan : System.Web.UI.Page
     {
+        int maBacSi;
         protected void Page_Load(object sender, EventArgs e)
         {
             nam.Checked = true;

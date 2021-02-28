@@ -79,6 +79,7 @@
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />
     <None Include="Content\Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Content\Scripts\CTJavaScript.js" />
     <Content Include="Content\Scripts\jquery-3.3.1.js" />
     <Content Include="Content\Scripts\jquery-3.3.1.min.js" />
     <Content Include="Content\Scripts\jquery-3.3.1.slim.js" />
@@ -118,7 +119,9 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="View\DanhSachLichKham.aspx" />
     <Content Include="View\DanhSachTaiKhoan.aspx" />
+    <Content Include="View\DatLichKham.aspx" />
     <Content Include="View\doiMatKhau.aspx" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\QuanLyDichVuYTe.aspx" />
@@ -141,12 +144,26 @@
     </Compile>
     <Compile Include="Model\ConnectDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\DanhSachLichKham.aspx.cs">
+      <DependentUpon>DanhSachLichKham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DanhSachLichKham.aspx.designer.cs">
+      <DependentUpon>DanhSachLichKham.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\DanhSachTaiKhoan.aspx.cs">
       <DependentUpon>DanhSachTaiKhoan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\DanhSachTaiKhoan.aspx.designer.cs">
       <DependentUpon>DanhSachTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\DatLichKham.aspx.cs">
+      <DependentUpon>DatLichKham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\DatLichKham.aspx.designer.cs">
+      <DependentUpon>DatLichKham.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\doiMatKhau.aspx.cs">
       <DependentUpon>doiMatKhau.aspx</DependentUpon>

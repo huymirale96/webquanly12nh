@@ -2,13 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <script>
-function suaLoaiBai(id, ten)
-{
-    //alert(ten + id);
-    $("#divTenLoaiBai").html("<div class='col-md-8'> <input name='ten' class='form-control' value='" + ten + "'/>" + "<input type='hidden' name='id' class='form-control' value='" + id + "'/></div><div class='col-md-3'><input type='submit' class='btn btn-success' value = 'Cập Nhật'/>  ");
-    $("#myModalSuaLoaiBai").modal();
-}
+
     </script>
+    
 
      <!-- Modal -->
   <div class="modal fade" id="myModalSuaLoaiBai" role="dialog">
@@ -21,11 +17,12 @@ function suaLoaiBai(id, ten)
           <h4 class="modal-title">Sửa Dịch Vụ Y Tế</h4>
         </div>
         <div class="modal-body">
-            <form method="get">
+            <form method="get" action="QuanLyDichVuYTe.aspx">
           <label>Tên Loài Bài</label>
             <div id="divTenLoaiBai" class="row">
                
             </div>
+                <input type='hidden' name='cn' class='form-control' value='capNhatDV' />
                 </form>
         </div>
         <div class="modal-footer">
@@ -72,7 +69,7 @@ function suaLoaiBai(id, ten)
                                                     <td class="text-center"><%# Eval("itienphi") %></td>
 										            
 											        <td class="text-center">
-                                                        <p class="btn btn-default" onclick="suaDichVu('<%# Eval("stendichvu") %>', '<%# Eval("itienphi") %>')">Sửa</p>
+                                                        <p class="btn btn-default" onclick="suaDichVu('<%# Eval("stendichvu") %>', <%# Eval("itienphi") %>, <%# Eval("imadichvu") %>)">Sửa</p>
 												    </td>
 									            </tr>
                                             </ItemTemplate>
