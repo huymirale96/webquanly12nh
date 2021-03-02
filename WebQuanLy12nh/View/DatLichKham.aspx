@@ -79,7 +79,6 @@
 									        <th class="text-center">STT</th>
 									        <th class="text-center">Tên Bác Sĩ</th>
 									       
-									        <th class="text-center"> Tiền Phí</th>
                                               <th class="text-center"> Tác Vụ</th>
 								        </tr>
 							        </thead>

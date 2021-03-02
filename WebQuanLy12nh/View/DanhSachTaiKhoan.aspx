@@ -43,7 +43,7 @@
                                                     <td class="left"><%# Eval("sSDT") %></td>
                                                     <td class="left"><%# Eval("semail") %></td>
                                  
-                                                    <td class="left"><%# Eval("iMaQuyen").ToString().Equals("1") ? "MEMBER " : "ADMIN" %></td>
+                                                    <td class="left"><%# Eval("iMaQuyen").ToString().Equals("2") ? "MEMBER " : "ADMIN" %></td>
                                                      <td class="text-center"><a href="SuaTaiKhoan.aspx?id=<%# Eval("imanguoidung") %>" class="btn btn-default">Sửa</a></td>   
 									            </tr>
                                             </ItemTemplate>

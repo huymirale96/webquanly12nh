@@ -123,10 +123,12 @@
     <Content Include="View\DanhSachTaiKhoan.aspx" />
     <Content Include="View\DatLichKham.aspx" />
     <Content Include="View\doiMatKhau.aspx" />
+    <Content Include="View\LapPhieuKhamBenh.aspx" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\QuanLyDichVuYTe.aspx" />
     <Content Include="View\SuaTaiKhoan.aspx" />
     <Content Include="View\ThemTaiKhoan.aspx" />
+    <Content Include="View\ThongBao.aspx" />
     <Content Include="View\Welcome.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
@@ -172,6 +174,13 @@
     <Compile Include="View\doiMatKhau.aspx.designer.cs">
       <DependentUpon>doiMatKhau.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\LapPhieuKhamBenh.aspx.cs">
+      <DependentUpon>LapPhieuKhamBenh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\LapPhieuKhamBenh.aspx.designer.cs">
+      <DependentUpon>LapPhieuKhamBenh.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -199,6 +208,13 @@
     </Compile>
     <Compile Include="View\ThemTaiKhoan.aspx.designer.cs">
       <DependentUpon>ThemTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThongBao.aspx.cs">
+      <DependentUpon>ThongBao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ThongBao.aspx.designer.cs">
+      <DependentUpon>ThongBao.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Welcome.aspx.cs">
       <DependentUpon>Welcome.aspx</DependentUpon>

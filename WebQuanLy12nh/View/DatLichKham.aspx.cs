@@ -103,7 +103,7 @@ namespace WebQuanLy12nh.View
                         int i = sqlCommand_.ExecuteNonQuery();
                         if (i > 0)
                         {
-                            Response.Redirect("welcome.aspx");
+                            Response.Redirect("thongbao.aspx?noti=Đặt Lịch Khám Thành Công - Bệnh Nhân: "+ txtTen.Text);
                         }
                     }
                   
@@ -120,7 +120,7 @@ namespace WebQuanLy12nh.View
         protected void chonBS_Click(object sender, EventArgs e)
         {
             chuyenKhoa = ddlChuyenKhoa.SelectedItem.Text;
-            lblNoti.Text = "Chuyên Khoa: " + chuyenKhoa + "  - ";
+         //   lblNoti.Text = "Chuyên Khoa: " + chuyenKhoa + "  - ";
 
             using (SqlConnection sqlConnection = conn.connectDatabase())
             {
@@ -133,7 +133,7 @@ namespace WebQuanLy12nh.View
                 rptBS.DataBind();
 
                 lbnoti2.Text = "Chuyên Khoa : " + chuyenKhoa;
-                Debug.WriteLine("nhan dc chuem khoa  " + ddlChuyenKhoa.SelectedItem.Text + chuyenKhoa);
+              //  Debug.WriteLine("nhan dc chuem khoa  " + ddlChuyenKhoa.SelectedItem.Text + chuyenKhoa);
             }
         }
     }

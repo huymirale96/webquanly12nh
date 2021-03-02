@@ -31,7 +31,7 @@ namespace WebQuanLy12nh.View
                 using (SqlConnection sqlConnection = conn.connectDatabase())
                 {
 
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from tblnguoidung", sqlConnection);
+                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("select * from tblnguoidung where imaquyen != 1", sqlConnection);
                     DataTable dataTable = new DataTable();
                     //Debug.WriteLine("data: so cot "+ da);
                     sqlDataAdapter.Fill(dataTable);

@@ -22,7 +22,7 @@ namespace WebQuanLy12nh
             Session["tenTK"] = "HUY";
             Session["maNguoiDung"] = "2";
             Session["maGV"] = "";
-            Session["quyen"] = "4"; //1 bs  - 3 admin
+            Session["quyen"] = "3"; //1 bs  - 3 admin  out 4
             Session["type"] = "1";
             Session["mess"] = "1";
             Session["sessId"] = Session.SessionID;

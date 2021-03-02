@@ -40,12 +40,14 @@
 							        <thead>
 								        <tr>
 									        <th class="text-center">STT</th>
+                                            <th class="text-center">Mã Hẹn Khám</th>
 									        <th class="text-center">HỌ TÊN BỆNH NHÂN</th>
 									        <th class="text-center">ĐỊA CHỈ</th>
 									        <th class="text-center">SĐT</th>
                                             <th class="text-center">BÁC SĨ</th>
                                              <th class="text-center">CHUYÊN KHOA</th>
                                              <th class="text-center">Ngày Tạo</th>
+                                             <th class="text-center">Trạng Thái</th>
 									          <th class="text-center">TÁC VỤ</th>
 									        
 									       
@@ -55,19 +57,24 @@
                                         <asp:Repeater ID="rptDanhSach" runat="server">
                                             <ItemTemplate>
                                                 <tr>
-										            <td class="text-center"><%# Container.ItemIndex+1 %></td>
-										            <td class="left"><%# Eval("stenbenhnhan") %></td>
-                                                    <td class="left"><%# Eval("sdiachi") %></td>
+                                                    <td class="text-center"><%# Container.ItemIndex+1 %></td>
+                                                    <td class="text-center" style='width: 10%;'>MH<%# Eval("imalichhenkham") %></td>
+										            <td class="text-center"><%# Eval("stenbenhnhan") %></td>
+                                                    <td class="text-center"><%# Eval("sdiachi") %></td>
 										         
-                                                    <td class="left"><%# Eval("sSDT") %></td>
-                                                    <td class="left"><%# Eval("shoten") %></td>
+                                                    <td class="text-center"><%# Eval("sSDT") %></td>
+                                                    <td class="text-center"><%# Eval("shoten") %></td>
                                  
-                                                    <td class="left"><%# Eval("stenchuyenkhoa").ToString().Equals("1") ? "MEMBER " : "ADMIN" %></td>
-                                                    <td class="left"><%# Eval("dthoigiantao") %></td>
-                                                    <td class="text-center"><a href="SuaTaiKhoan.aspx?id=<%# Eval("imalichhenkham") %>" class="btn btn-default">Sửa</a></td>   
-									            </tr>
+                                                    <td class="text-center"><%# Eval("stenchuyenkhoa")%></td>
+                                                    <td class="left"  style='width: 10%;'><%# Eval("dthoigiantao") %></td>
+                                                     <td class="text-center"><%# trangThai(Eval("itrangthai").ToString()) %></td>
+                                               
+
+                                                     <td class="text-center">  <asp:LinkButton ID="btnDel"  CssClass="btn btn-xs btn-danger" ToolTip="Xoá " runat="server" OnClick="btnDel_Click" OnClientClick="return confirm('Bạn có chắc chắn xoá ?')" CommandArgument='<%# Eval("imalichhenkham") %>'><i class="fa fa-times" aria-hidden="true"></i></asp:LinkButton></td>
+										          
+                                                     </tr>
                                             </ItemTemplate>
-                                        </asp:Repeater>
+                                        </asp:Repeater>                                                     <td class="text-center"><%# trangThai(Eval("itrangthai").ToString()) %></td>
                                          
 							        </tbody>
 
