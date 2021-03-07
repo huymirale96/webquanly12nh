@@ -11,10 +11,10 @@ namespace WebQuanLy12nh.Layout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (String.Compare(Session["quyen"].ToString(), "4") == 0)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
+            if (String.Compare(Session["quyen"].ToString(), "4") == 0)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
 
         

@@ -19,10 +19,11 @@ namespace WebQuanLy12nh.View
             if (!IsPostBack)
             {
              
-                if (Request.QueryString["id"] != null)
+                if (Request.QueryString["id"] != null && Request.QueryString["quyen"] != null)
                 {
-                    layThongTinTaiKhoan(Request.QueryString["id"].ToString());
+                    layThongTinTaiKhoan(Request.QueryString["id"].ToString()); 
                     maNguoiDung.Value = Request.QueryString["id"].ToString();
+                    maQuyen.Value = Request.QueryString["quyen"].ToString();
                 }
             }
         }
@@ -83,15 +84,25 @@ namespace WebQuanLy12nh.View
                         sqlCommand.Parameters.AddWithValue("@gt", "0");
                     }
 
-                    if (member.Checked == true)
+                   
+
+                    if (maQuyen.Value.Equals("1"))
                     {
-                        sqlCommand.Parameters.AddWithValue("@maquyen", "2");
+                        sqlCommand.Parameters.AddWithValue("@maquyen", "1");
                     }
                     else
                     {
-                        sqlCommand.Parameters.AddWithValue("@maquyen", "3");
+                        if (member.Checked == true)
+                        {
+                            sqlCommand.Parameters.AddWithValue("@maquyen", "2");
+                        }
+                        else
+                        {
+                            sqlCommand.Parameters.AddWithValue("@maquyen", "3");
+                        }
                     }
-
+                    
+    
                     int i = sqlCommand.ExecuteNonQuery();
                     Debug.WriteLine(maNguoiDung.Value + "ii  " + i);
                     if (i > 0)

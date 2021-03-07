@@ -44,7 +44,7 @@
                                                     <td class="left"><%# Eval("semail") %></td>
                                  
                                                     <td class="left"><%# Eval("iMaQuyen").ToString().Equals("2") ? "MEMBER " : "ADMIN" %></td>
-                                                     <td class="text-center"><a href="SuaTaiKhoan.aspx?id=<%# Eval("imanguoidung") %>" class="btn btn-default">Sửa</a></td>   
+                                                     <td class="text-center"><a href="SuaTaiKhoan.aspx?id=<%# Eval("imanguoidung") %>&quyen=<%# Eval("imaquyen") %>" class="btn btn-default">Sửa</a></td>   
 									            </tr>
                                             </ItemTemplate>
                                         </asp:Repeater>
@@ -95,7 +95,7 @@
                                                     <td class="text-center"><%# Eval("semail") %></td>
                                  
                                                     <td class="text-center"><%# Eval("stenchuyenkhoa") %></td>
-                                                     <td class="text-center"><a href="SuaTaiKhoan.aspx?id=<%# Eval("imanguoidung") %>" class="btn btn-default">Sửa</a></td>   
+                                                     <td class="text-center"><a href="SuaTaiKhoan.aspx?id=<%# Eval("imanguoidung") %>&quyen=<%# Eval("imaquyen") %>" class="btn btn-default">Sửa</a></td>   
 									            </tr>
                                             </ItemTemplate>
                                         </asp:Repeater>

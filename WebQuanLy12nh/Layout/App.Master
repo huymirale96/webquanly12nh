@@ -107,6 +107,11 @@
                                 <!-- /.nav-second-level -->
                             </li>
 
+                                         <li>
+                                <a href="DanhSachPhieuKham.aspx"><i class="fa fa-plus"></i> QL Danh Sách Phiếu Khám</a>
+                                
+                                <!-- /.nav-second-level -->
+                            </li>
                            
                                       <% if( Int32.Parse(Session["quyen"].ToString()) == 3)
                                           { %>

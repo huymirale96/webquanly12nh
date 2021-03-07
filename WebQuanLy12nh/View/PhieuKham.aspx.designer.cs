@@ -10,7 +10,7 @@
 namespace WebQuanLy12nh.View {
     
     
-    public partial class LapPhieuKhamBenh {
+    public partial class PhieuKham {
         
         /// <summary>
         /// maLichHen control.
@@ -20,15 +20,6 @@ namespace WebQuanLy12nh.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField maLichHen;
-        
-        /// <summary>
-        /// btnHoanThanh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnHoanThanh;
         
         /// <summary>
         /// txtTen control.
@@ -112,6 +103,24 @@ namespace WebQuanLy12nh.View {
         protected global::System.Web.UI.WebControls.TextBox txtDieuTri;
         
         /// <summary>
+        /// txtBacSi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtBacSi;
+        
+        /// <summary>
+        /// txtThoiian control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtThoiian;
+        
+        /// <summary>
         /// rptDanhSach control.
         /// </summary>
         /// <remarks>
@@ -128,41 +137,5 @@ namespace WebQuanLy12nh.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTableCell tongCong;
-        
-        /// <summary>
-        /// ddlListDV control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlListDV;
-        
-        /// <summary>
-        /// TxtSoLuong control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtSoLuong;
-        
-        /// <summary>
-        /// da control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator da;
-        
-        /// <summary>
-        /// btnThem control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnThem;
     }
 }

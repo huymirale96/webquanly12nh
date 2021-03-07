@@ -21,6 +21,7 @@
                             </div>
                             <form method="post" runat="server" class="form-horizontal">
                                 <asp:HiddenField ID="maNguoiDung" runat="server" />
+                                <asp:HiddenField ID="maQuyen" runat="server" />
                                 <div class="col-md-6">
                                     <div class="form-group">
                                          <label class="col-md-3 control-label-left">Họ Tên</label>

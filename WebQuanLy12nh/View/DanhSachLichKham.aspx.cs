@@ -56,12 +56,30 @@ namespace WebQuanLy12nh.View
             int i = Int32.Parse(tt);
             switch(i)
             {
-                case 0: return "<span class='label-warning'>Đang Chờ Khám</label>";
+                case 0: return "<span class='label label-warning'>Đang Chờ Khám</label>";
                 case 1: return "<span class='label label-success'>Đã Khám</label>";
                 case 2: return "<span class='label label-danger'>Đã Huỷ</label>";
 
             }
             return "";
+        }
+
+        public string ktrBS(string tt)
+        {
+            if(tt.Equals("0") && Session["quyen"].ToString().Equals("1"))
+            {
+                return "";
+            }
+            return "style='display: none;'";
+        }
+
+        public string ktrADMIN(string tt)
+        {
+            if (tt.Equals("0") && !Session["quyen"].ToString().Equals("1"))
+            {
+                return "";
+            }
+            return "style='display: none;'";
         }
 
         protected void btnTim_Click(object sender, EventArgs e)
@@ -89,7 +107,6 @@ namespace WebQuanLy12nh.View
                     sqlCommand.CommandType = CommandType.Text;
                     sqlCommand.ExecuteNonQuery();
                     layLichKham(DateTime.Parse(ngay.Text).ToString("MM/dd/yyyy"));
-
                 }
             }
             catch (Exception ex)
@@ -98,5 +115,4 @@ namespace WebQuanLy12nh.View
             }
         }
     }
-    
 }

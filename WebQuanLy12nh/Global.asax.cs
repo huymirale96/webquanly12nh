@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using WebQuanLy12nh.Model;
 
 namespace WebQuanLy12nh
 {
@@ -20,9 +21,9 @@ namespace WebQuanLy12nh
             
             Session["login"] = false;
             Session["tenTK"] = "HUY";
-            Session["maNguoiDung"] = "2";
-            Session["maGV"] = "";
-            Session["quyen"] = "3"; //1 bs  - 3 admin  out 4
+            Session["maNguoiDung"] = "1";
+            Session["danhSachDichVu"] = new List < DvuYTe >();
+            Session["quyen"] = "4"; //1 bs  - 3 admin  out 4
             Session["type"] = "1";
             Session["mess"] = "1";
             Session["sessId"] = Session.SessionID;

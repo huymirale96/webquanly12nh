@@ -1,11 +1,12 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/Layout/App.Master" AutoEventWireup="true" CodeBehind="DanhSachLichKham.aspx.cs" Inherits="WebQuanLy12nh.View.DanhSachLichKham" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Layout/App.Master" AutoEventWireup="true" CodeBehind="DanhSachPhieuKham.aspx.cs" Inherits="WebQuanLy12nh.View.DanhSachPhieuKham" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container-fluid">
         <form method="POST" class="form-horizontal" runat="server" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-header">QUẢN LÝ DANH SÁCH LỊCH KHÁM</h1>
+                    <h1 class="page-header">QUẢN LÝ DANH SÁCH PHIẾU KHÁM</h1>
                 </div>
             </div>
             <div class="row">
@@ -40,14 +41,11 @@
 							        <thead>
 								        <tr>
 									        <th class="text-center">STT</th>
-                                            <th class="text-center">Mã Hẹn Khám</th>
+                                            <th class="text-center">Mã Phiếu Khám</th>
 									        <th class="text-center">HỌ TÊN BỆNH NHÂN</th>
-									        <th class="text-center">ĐỊA CHỈ</th>
-									        <th class="text-center">SĐT</th>
-                                            <th class="text-center">BÁC SĨ</th>
-                                             <th class="text-center">CHUYÊN KHOA</th>
-                                             <th class="text-center">Ngày Tạo</th>
-                                             <th class="text-center">Trạng Thái</th>
+									        <th class="text-center">Bác Sĩ</th>
+									        <th class="text-center">THời Gian Khám</th>
+                                            <th class="text-center">Tổng Tiền Phí</th>
 									          <th class="text-center">TÁC VỤ</th>
 									        
 									       
@@ -58,18 +56,13 @@
                                             <ItemTemplate>
                                                 <tr>
                                                     <td class="text-center"><%# Container.ItemIndex+1 %></td>
-                                                    <td class="text-center" style='width: 10%;'>MH<%# Eval("imalichhenkham") %></td>
+                                                    <td class="text-center" style='width: 10%;'>MH<%# Eval("iMaPhieuKham") %></td>
 										            <td class="text-center"><%# Eval("stenbenhnhan") %></td>
-                                                    <td class="text-center"><%# Eval("sdiachi") %></td>
-										         
-                                                    <td class="text-center"><%# Eval("sSDT") %></td>
-                                                    <td class="text-center"><%# Eval("shoten") %></td>
-                                 
-                                                    <td class="text-center"><%# Eval("stenchuyenkhoa")%></td>
-                                                    <td class="left"  style='width: 10%;'><%# Eval("dthoigiantao") %></td>  
-                                                     <td class="text-center"><%# trangThai(Eval("itrangthai").ToString()) %></td>
-                                                     <td class="text-center"> <span   <%# ktrADMIN(Eval("itrangthai").ToString()) %>> <asp:LinkButton ID="btnDel"  CssClass="btn btn-xs btn-danger" ToolTip="Xoá " runat="server" OnClick="btnDel_Click" OnClientClick="return confirm('Bạn có chắc chắn xoá ?')" CommandArgument='<%# Eval("imalichhenkham") %>'><i class="fa fa-times" aria-hidden="true"></i></asp:LinkButton></span>
-                                                         <a href="LapPhieuKhamBenh.aspx?id=<%# Eval("imalichhenkham") %>" <%# ktrBS(Eval("itrangthai").ToString()) %>><i class="fa fa-pencil"></i></a>
+                                                    <td class="text-center"><%# Eval("sHoTen") %></td>
+                                                    <td class="text-center"><%# Eval("dThoiGianTao") %></td>           
+                                                    <td class="text-center"><%# Eval("tienPhi")%></td>
+                                                       <td class="text-center">
+                                                         <a href="PhieuKham.aspx?id=<%# Eval("iMaPhieuKham") %>"<span class="label label-info">Xem Chi Tiết</span>  </a>
                                                      </td>
 										             
                                                      </tr>
