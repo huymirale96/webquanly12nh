@@ -30,22 +30,22 @@
                                     <label>
                                         Tiểu Sử Bệnh:
                                     </label>
-                                    <asp:TextBox ID="txtTieuSu" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                    <asp:TextBox ID="txtTieuSu" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="6"></asp:TextBox>
 
                                                            <label>
                                         Cận Lâm Sàng:
                                     </label>
-                                    <asp:TextBox ID="txtCanLamSang" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                    <asp:TextBox ID="txtCanLamSang" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="6"></asp:TextBox>
 
                                                            <label>
                                         Chuẩn Đoán:
                                     </label>
-                                    <asp:TextBox ID="txtChuanDoan" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                    <asp:TextBox ID="txtChuanDoan" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="6"></asp:TextBox>
 
                                          <label>
                                         Hướng Điều Trị:
                                     </label>
-                                    <asp:TextBox ID="txtDieuTri" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="3"></asp:TextBox>
+                                    <asp:TextBox ID="txtDieuTri" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="6"></asp:TextBox>
 
                                 </div>
                             </div>

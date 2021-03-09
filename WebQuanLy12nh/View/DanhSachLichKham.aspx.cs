@@ -26,23 +26,45 @@ namespace WebQuanLy12nh.View
       
           void layLichKham(string ngay)
         {
-            Debug.WriteLine("nhan dc ngay   " + ngay);
+            Debug.WriteLine("nhan dc ngay   " + ngay + " quyen " + Session["quyen"]);
             try
             {
-
-                using (SqlConnection sqlConnection = conn.connectDatabase())
+                if (Session["quyen"].ToString().Equals("1"))
                 {
-                    SqlCommand sqlCommand = new SqlCommand("sp_dsLichKham", sqlConnection);
-                    sqlCommand.CommandType = CommandType.StoredProcedure;
-                    sqlCommand.Parameters.AddWithValue("@ngay", ngay);
-                    sqlCommand.ExecuteNonQuery();
-                    SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
-                    DataTable dataTable = new DataTable();
-                    sqlDataAdapter.Fill(dataTable);
-                    rptDanhSach.DataSource = dataTable;
-                    rptDanhSach.DataBind();
+                    {
+                        using (SqlConnection sqlConnection = conn.connectDatabase())
+                        {
+                            SqlCommand sqlCommand = new SqlCommand("sp_dsLichKhamTheoBS", sqlConnection);
+                            sqlCommand.CommandType = CommandType.StoredProcedure;
+                            sqlCommand.Parameters.AddWithValue("@ngay", ngay);
+                            sqlCommand.Parameters.AddWithValue("@id", Session["maNguoiDung"]);
+                            sqlCommand.ExecuteNonQuery();
+                            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                            DataTable dataTable = new DataTable();
+                            sqlDataAdapter.Fill(dataTable);
+                            rptDanhSach.DataSource = dataTable;
+                            rptDanhSach.DataBind();
 
-                    // Debug.WriteLine("nhan dc loi  " + dataTable.Rows.Count);
+                            // Debug.WriteLine("nhan dc loi  " + dataTable.Rows.Count);
+                        }
+                    }
+                }
+                else
+                {
+                    using (SqlConnection sqlConnection = conn.connectDatabase())
+                    {
+                        SqlCommand sqlCommand = new SqlCommand("sp_dsLichKham", sqlConnection);
+                        sqlCommand.CommandType = CommandType.StoredProcedure;
+                        sqlCommand.Parameters.AddWithValue("@ngay", ngay);
+                        sqlCommand.ExecuteNonQuery();
+                        SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                        DataTable dataTable = new DataTable();
+                        sqlDataAdapter.Fill(dataTable);
+                        rptDanhSach.DataSource = dataTable;
+                        rptDanhSach.DataBind();
+
+                        // Debug.WriteLine("nhan dc loi  " + dataTable.Rows.Count);
+                    }
                 }
             }
             catch(Exception ex)

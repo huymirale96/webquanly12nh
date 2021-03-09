@@ -119,6 +119,7 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="View\BaoCaoKhamTheoNgay.aspx" />
     <Content Include="View\DanhSachLichKham.aspx" />
     <Content Include="View\DanhSachPhieuKham.aspx" />
     <Content Include="View\DanhSachTaiKhoan.aspx" />
@@ -149,6 +150,13 @@
     <Compile Include="Model\ConnectDatabase.cs" />
     <Compile Include="Model\DvuYTe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\BaoCaoKhamTheoNgay.aspx.cs">
+      <DependentUpon>BaoCaoKhamTheoNgay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\BaoCaoKhamTheoNgay.aspx.designer.cs">
+      <DependentUpon>BaoCaoKhamTheoNgay.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\DanhSachLichKham.aspx.cs">
       <DependentUpon>DanhSachLichKham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

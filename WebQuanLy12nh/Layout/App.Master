@@ -142,10 +142,7 @@
                                 <a href="#"><i class="fa fa-outdent fa-fw"></i>Báo Cáo - Thống Kê<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                     <li>
-                                        <a href="baoCaoSoBaiCuaMoiNguoi.aspx">Báo Cáo Số Lượng Bài Của Mỗi Người</a>
-                                    </li>
-                                    <li>
-                                        <a href="BaoCaoSoLanXemCuaMoiBai.aspx">Báo Cáo Số Lần Xem Của Mỗi Bài</a>
+                                        <a href="BaoCaoKhamTheoNgay.aspx">Báo Cáo Khám Bệnh Theo Ngày</a>
                                     </li>
                                 </ul>
                                 <!-- /.nav-second-level -->

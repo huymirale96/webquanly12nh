@@ -60,7 +60,7 @@ namespace WebQuanLy12nh.View
                     else
                     {
 
-                        if (admin.Checked == true)
+                        if (admin.Checked == false)
                         {
                             sqlCommand.Parameters.AddWithValue("@maquyen", "3");
                         }
