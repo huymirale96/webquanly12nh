@@ -43,6 +43,7 @@
                                     <div class="col-md-12 text-center">
                                         <asp:Label ID="lblNoti" runat="server" Text="" CssClass="text-danger"></asp:Label>
                                     </div>
+                         <%--        <asp:TextBox ID="s" runat="server" TextMode="DateTimeLocal"></asp:TextBox>--%>
                                     <!-- Change this to a button or input when using this as a form -->
                                     <asp:Button ID="btnLogin" runat="server" Text="Đăng nhập" OnClick="btnLogin_Click" CssClass="btn btn-lg btn-success btn-block" />
                                 </fieldset>

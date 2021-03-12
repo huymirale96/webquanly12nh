@@ -19,7 +19,7 @@ namespace WebQuanLy12nh.View {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNoti;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblNoti;
         
         /// <summary>
         /// lbnoti2 control.
@@ -74,24 +74,6 @@ namespace WebQuanLy12nh.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNgayKham;
-        
-        /// <summary>
-        /// nam control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton nam;
-        
-        /// <summary>
-        /// nu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton nu;
         
         /// <summary>
         /// chonBS control.

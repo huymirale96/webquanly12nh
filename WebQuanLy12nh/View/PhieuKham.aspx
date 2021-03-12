@@ -24,11 +24,13 @@
                                     <div class="alert alert-info">
                                         <strong>Thông Tin Bệnh Nhân</strong>
                                     </div>
+                                   <div style="margin-left: 15px;">
                                     <asp:Label ID="txtTen" runat="server" CssClass="lead textHead" Text="ABC"></asp:Label>
                                     <asp:Label ID="txtDiaCHi" runat="server" CssClass="lead textHead" Text="ABC"></asp:Label>
                                     <asp:Label ID="txtSoDienThoai" runat="server" CssClass="lead textHead" Text="ABC"></asp:Label>
                                     <asp:Label ID="txtNS" runat="server" CssClass="lead textHead" Text="ABC"></asp:Label>
                                     <asp:Label ID="txtBaoHiem" runat="server" CssClass="lead textHead" Text="ABC"></asp:Label>
+                                   </div>
                                 </div>
                                 <div style="margin-left: 20px; margin-top: 7px; margin-bottom: 50px;">
                                     <label>
@@ -58,9 +60,10 @@
                                     <div class="alert alert-info">
                                         <strong>***</strong>
                                     </div>
+                                    <div style="margin-left: 15px;">
                                     <asp:Label ID="txtBacSi" runat="server" CssClass="lead textHead" Text="ABC"></asp:Label>
                                     <asp:Label ID="txtThoiian" runat="server" CssClass="lead textHead" Text="ABC"></asp:Label>
-
+                                    </div>
                                 </div>
                                 <h2>Các Dịch Vụ Y Tế</h2>
                                 <div>
@@ -107,32 +110,17 @@
     </form>
     </div>
     <style>
-        .control-label-left {
-            padding-top: 7px;
-         
-        ttom: ;
-                text-align: left
-            
-       }
-                    t
-
-               0px !important;                    splay: lock;                   margin- eft:
-            
-        }
-            
-              .btnHT {
-                  bottom: 0px;            
-        d
-
-                 }
-
-        .ttbn {                  background-color: #48aedf;
-    color: white;
-    border-radius: 8px;
+     
+        .ttbn {
+       background-color: #3297ca;
+    color: #e8f1f7;
+    border-radius: 4px;
     margin-top: 5px;
     margin-left: 19px;
        height: 227px;
 }
-        }
+      .lead {
+      display: table-header-group;
+      }
     </style>
 </asp:Content>

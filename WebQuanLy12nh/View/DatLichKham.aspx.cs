@@ -11,33 +11,68 @@ namespace WebQuanLy12nh.View
     {
         public String maBacSi = "1";
         public String chuyenKhoa = "1";
+        int soLuongKhamToiDa = 30;
        
         ConnectDatabase conn = new ConnectDatabase();
         protected void Page_Load(object sender, EventArgs e)
         {
-            lbnoti2.Visible = true;
+          
             if (!IsPostBack)
             {
                 loadListChuyenKhoa(); 
                panelBN.Visible = false;
-              
+                lblNoti.Visible = false;
                 txtNgayKham.Text = DateTime.Now.ToString("yyyy-MM-yy");
                 if (Request.QueryString["cn"] != null && Request.QueryString["id"] != null && Request.QueryString["tenBS"] != null && Request.QueryString["ngaykham"] != null)
                 {
-                   
-                    lbnoti2.Visible = false;
-                    maBS.Value = maBacSi = Request.QueryString["id"];
-                    panelBN.Visible = true;
-                    chonChuyenKhoa.Visible = true;
-                    ngayKham.Value = Request.QueryString["ngaykham"];
-                    lblNoti.Text = lblNoti.Text + " Bác Sĩ: " + Request.QueryString["tenBS"] ;
-                   
+                    if (kiemTraSoLuongkham(DateTime.Parse(Request.QueryString["ngaykham"].ToString()), Request.QueryString["id"].ToString(), soLuongKhamToiDa))
+                    {
+                        maBS.Value = maBacSi = Request.QueryString["id"];
+                        panelBN.Visible = true;
+                        chonChuyenKhoa.Visible = true;
+                        ngayKham.Value = Request.QueryString["ngaykham"];
+                        lblNoti.Visible = true;
+                        lblNoti.InnerText = " Bác Sĩ: " + Request.QueryString["tenBS"];
+                    }
+                    else
+                    {
+                        chonChuyenKhoa.Visible = true;
+                        lblNoti.Visible = true;
+                        lblNoti.InnerText = " Bác Sĩ Đã Kín Lịch Hẹn Ngày: " + Request.QueryString["ngaykham"];
+                    }
+
+
+
                 }
             }
         }
         public string ngaykham()
         {
             return txtNgayKham.Text;
+        }
+        Boolean kiemTraSoLuongkham(DateTime ngay, string id, int max)
+        {
+            using (SqlConnection sqlConnection = conn.connectDatabase())
+            {
+                SqlCommand sqlCommand = new SqlCommand("sp_laySoLuongKham", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("@id", id);
+                sqlCommand.Parameters.AddWithValue("@ngay", ngay.ToString("MM/dd/yyyy"));
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                if(dataTable.Rows.Count <= max)
+                {
+                   
+                    return true;
+                  
+                }
+                else
+                {
+                    return false;
+                }
+               
+            }
         }
         public void loadListChuyenKhoa()
         {
@@ -59,9 +94,14 @@ namespace WebQuanLy12nh.View
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+          //  DateTime now = DateTime.Now.Date;
+          //  DateTime ns_ = DateTime.Parse(txtNS.Text);
+          ////  ns_.AddYears(5);
+          //  int value = DateTime.Compare(now, ns_);
+          //  Debug.WriteLine("nhan dc value:   " + value + "  " + now +  ns_);
+            //return;
             try
             {
-                
                using (SqlConnection sqlConnection = conn.connectDatabase())
                 {
                     SqlCommand sqlCommand = new SqlCommand("sp_themBN", sqlConnection);
@@ -86,8 +126,6 @@ namespace WebQuanLy12nh.View
 
                     outPutVal.Direction = ParameterDirection.Output;
                     sqlCommand.Parameters.Add(outPutVal);
-
-
                     int iz = sqlCommand.ExecuteNonQuery();
                     Debug.WriteLine("bs:  " + maBacSi);
                     using (SqlConnection sqlConnection_ = conn.connectDatabase())
@@ -105,10 +143,7 @@ namespace WebQuanLy12nh.View
                         {
                             Response.Redirect("thongbao.aspx?noti=Đặt Lịch Khám Thành Công - Bệnh Nhân: "+ txtTen.Text);
                         }
-                    }
-                  
-
-                   
+                    }       
                 }
             }
             catch(Exception ex)
@@ -132,7 +167,7 @@ namespace WebQuanLy12nh.View
 
                 rptBS.DataBind();
 
-                lbnoti2.Text = "Chuyên Khoa : " + chuyenKhoa;
+                lblNoti.InnerText =  "Chuyên Khoa : " + chuyenKhoa ;
               //  Debug.WriteLine("nhan dc chuem khoa  " + ddlChuyenKhoa.SelectedItem.Text + chuyenKhoa);
             }
         }

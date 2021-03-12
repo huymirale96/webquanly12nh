@@ -125,7 +125,7 @@ namespace WebQuanLy12nh.View
             {
                 using (SqlConnection sqlConnection = conn.connectDatabase())
                 {
-                    SqlCommand sqlCommand = new SqlCommand("delete from tbllichhenkham where imalichhenkham = " + id, sqlConnection);
+                    SqlCommand sqlCommand = new SqlCommand("update tbllichhenkham set itrangthai = 2 where imalichhenkham = " + id, sqlConnection);
                     sqlCommand.CommandType = CommandType.Text;
                     sqlCommand.ExecuteNonQuery();
                     layLichKham(DateTime.Parse(ngay.Text).ToString("MM/dd/yyyy"));
