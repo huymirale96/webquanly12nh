@@ -33,7 +33,20 @@
                          </div>
                 
                      </div>
-                      
+                         <div class="row" style="margin-top: 15px;">
+                        <div class="col-md-2">
+                         <label>Tên Bệnh Nhân</label>
+                         </div>
+                   
+                     <div class="col-md-4">
+                         
+                         <asp:TextBox ID="txtTenbn"  runat="server"  CssClass="form-control"></asp:TextBox>
+                      </div>
+                     <div class="col-md-5">
+                         <asp:button  ID="btnTimTen" CssClass="btn btn-success" runat="server" Text="Tìm Kiếm" OnClick="btnTimTen_Click"/>
+                         </div>
+                
+                     </div>
 
                             <div class="col-md-12" style="margin-top:25px;">
                                 <table class="table table-bordered table-stripped">

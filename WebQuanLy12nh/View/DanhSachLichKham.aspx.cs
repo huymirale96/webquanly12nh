@@ -136,5 +136,23 @@ namespace WebQuanLy12nh.View
                 Debug.WriteLine("nhan dc loi  " + ex.Message);
             }
         }
+
+        protected void btnTimTen_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection sqlConnection = conn.connectDatabase())
+            {
+                SqlCommand sqlCommand = new SqlCommand("sp_dsLichKhamTheoTenBV", sqlConnection);
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("@ten", txtTenbn.Text);
+                sqlCommand.ExecuteNonQuery();
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                rptDanhSach.DataSource = dataTable;
+                rptDanhSach.DataBind();
+
+                // Debug.WriteLine("nhan dc loi  " + dataTable.Rows.Count);
+            }
+        }
     }
 }
