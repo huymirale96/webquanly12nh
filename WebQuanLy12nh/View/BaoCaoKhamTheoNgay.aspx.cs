@@ -61,5 +61,18 @@ namespace WebQuanLy12nh.View
                 }
             
         }
+
+        protected void btnKNhi_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection sqlConnection = conn.connectDatabase())
+            {
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("sp_bnKhoaNhi", sqlConnection);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                Repeater1.DataSource = dataTable;
+                Repeater1.DataBind();
+            }
+        }
     }
 }

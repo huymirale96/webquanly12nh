@@ -32,6 +32,8 @@
                      <div class="col-md-3">
                          <asp:button  ID="btnTim" CssClass="btn btn-success" runat="server" Text="Tìm Kiếm" OnClick="btnTim_Click"/>
                          </div>
+
+                     
                 
                      </div>
                       
@@ -63,6 +65,39 @@
                                                 <td class="text-center" id="tongSL" runat="server">0</td>
                                                 <td class="text-center" id="tongTien" runat="server">0</td>
                                             </tr>
+                                         
+							        </tbody>
+
+                                    
+						        </table>
+                              
+                            </div>
+
+
+                             <div class="col-md-3">
+                         <asp:button  ID="btnKNhi" CssClass="btn btn-success" runat="server" Text="BN Khoa Nhi" OnClick="btnKNhi_Click"/>
+                         </div>
+                              <div class="col-md-12" style="margin-top:25px;">
+                                <table class="table table-bordered table-stripped">
+							        <thead>
+								        <tr>
+									        <th class="text-center">STT</th>
+                                            <th class="text-center">Tên Bệnh Nhân</th>
+									      
+								        </tr>
+							        </thead>
+							        <tbody>
+                                        <asp:Repeater ID="Repeater1" runat="server">
+                                            <ItemTemplate>
+                                                <tr>
+                                                    <td class="text-center"><%# Container.ItemIndex+1 %></td>
+										            <td class="text-center"><%# Eval("sTenBenhNhan") %></td>
+                                                   
+                                                </tr>
+                                            </ItemTemplate>
+
+                                        </asp:Repeater>     
+                                         
                                          
 							        </tbody>
 
